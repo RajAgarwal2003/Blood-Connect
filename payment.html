@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
+  </head>
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+
+    * {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+      text-transform: capitalize;
+      
+      transition: all 0.2s linear;
+    }
+    .heading {
+  text-align: center;
+  padding-bottom: 2rem;
+  text-shadow: var(--text-shadow);
+  text-transform: uppercase;
+  color: var(--black);
+  font-size: 5rem;
+  letter-spacing: 0.4rem;
+}
+.heading span {
+  text-transform: uppercase;
+  color: var(--blue);
+}
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  padding-left: 1rem;
+  border: var(--border);
+  border-radius: 0.5rem;
+  box-shadow: var(--box-shadow);
+  color: var(--blue);
+  cursor: pointer;
+  font-size: 1.7rem;
+  background: #fff;
+}
+.btn span {
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  background: var(--blue);
+  color: #fff;
+  margin-left: 0.5rem;
+}
+.btn:hover {
+  background: var(--blue);
+  color: #fff;
+}
+.btn:hover span {
+  color: var(--blue);
+  background: #fff;
+  margin-left: 1rem;
+}
+    .header {
+  padding: 2rem 9%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: blue;
+}
+.header .logo {
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: bolder;
+}
+.header .logo i {
+  color: #fff;
+  padding: 8px;
+}
+.header .navbar a {
+  font-size: 1.7rem;
+  color: #fff;
+  font-weight: bolder;
+  margin-left: 2rem;
+}
+.header .navbar a:hover {
+  color: lawngreen;
+  animation: linear;
+  border-bottom: 3px solid lawngreen;
+}
+#menu-btn {
+  font-size: 2.5rem;
+  border-radius: 0.5rem;
+  background: #eee;
+  color: var(--blue);
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 25px;
+      min-height: 100vh;
+      background-image: linear-gradient(334deg, blue, white);
+    }
+
+    .container form {
+        margin-top: 10%;
+      padding: 20px;
+      width: 700px;
+      border-radius: 30px;
+      box-shadow: 0 5px 10px rgb(0 0 0 / 10%);
+      background: gold;
+      --box-shadow: 0.5rem 0.5rem 0 rgba(25, 174, 143, 38.2);
+    }
+
+    .container form .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .container form .row .col {
+      flex: 1 1 250px;
+    }
+
+    .container form .row .col .title {
+      font-size: 20px;
+      color: #333;
+      padding-bottom: 5px;
+      text-transform: uppercase;
+    }
+
+    .container form .row .col .inputBox {
+      margin: 15px 0;
+    }
+
+    .container form .row .col .inputBox span {
+      margin-bottom: 10px;
+      display: block;
+      color: #000;
+      font-weight: bold;
+    }
+
+    .container form .row .col .inputBox input {
+      width: 100%;
+      border: 1px solid black;
+      padding: 10px 15px;
+      font-size: 15px;
+      text-transform: none;
+    }
+
+    .container form .row .col .inputBox input:focus {
+      border: 1px solid #000;
+    }
+
+    .container form .row .col .flex {
+      display: flex;
+      gap: 15px;
+    }
+
+    .container form .row .col .flex .inputBox {
+      margin-top: 5px;
+    }
+
+    .container form .row .col .inputBox img {
+      height: 34px;
+      margin-top: 5px;
+      filter: drop-shadow(0 0 1px #000);
+    }
+
+    .container form .submit-btn {
+      width: 100%;
+      padding: 12px;
+      font-size: 17px;
+      background: black;
+      color: white;
+      margin-top: 5px;
+      cursor: pointer;
+      border-radius: 10px;
+    }
+
+    .container form .submit-btn:hover {
+      background: greenyellow;
+      color: white;
+    }
+    @media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  .header {
+    padding: 2rem;
+  }
+  section {
+    padding: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  #menu-btn {
+    display: initial;
+  }
+  .header .navbar {
+    position: absolute;
+    top: 115%;
+    right: 2rem;
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    width: 30rem;
+    border: var(--border);
+    background: #fff;
+    transform: scale(0);
+    opacity: 0;
+    transform-origin: top right;
+    transition: none;
+  }
+  .header .navbar.active {
+    transform: scale(1);
+    opacity: 1;
+    transition: 0.2s ease-out;
+    background-color: blue;
+  }
+  .header .navbar a {
+    font-size: 2rem;
+    display: block;
+    margin: 2.5rem;
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
+
+  </style>
+  <body>
+    <header class="header">
+        <a href="#" class="logo">
+          <i class="fas fa-heartbeat" style="color: lawngreen;"></i>Blood Connect
+        </a>
+        <nav class="navbar">
+          <a href="index.html">home</a>
+          <a href="#services">services</a>
+          <a href="#about">about</a>
+          <a href="#doctors">doctors</a>
+          <a href="#book">book</a>
+          <a href="#review">review</a>
+          <a href="#blogs">blogs</a>
+          <a href="payment.html">Payment</a>
+        </nav>
+        <div id="menu-btn" class="fas fa-bars"></div>
+      </header>
+    <div class="container">
+      <form action="">
+        <div class="row">
+          <div class="col">
+            <h3 class="title">billing address</h3>
+
+            <div class="inputBox">
+              <span>full name :</span>
+              <input type="text" placeholder="Enter Your Full Name" />
+            </div>
+            <div class="inputBox">
+              <span>email :</span>
+              <input type="email" placeholder="Enter Your Email" />
+            </div>
+            <div class="inputBox">
+              <span>address :</span>
+              <input type="text" placeholder="Enter Your Address" />
+            </div>
+            <div class="inputBox">
+              <span>city :</span>
+              <input type="text" placeholder="Enter Your City" />
+            </div>
+
+            <div class="flex">
+              <div class="inputBox">
+                <span>state :</span>
+                <input type="text" placeholder="Enter Your state" />
+              </div>
+              <div class="inputBox">
+                <span>zip code :</span>
+                <input type="text" placeholder="Enter zip code" />
+              </div>
+            </div>
+          </div>
+
+          <div class="col">
+            <h3 class="title">payment</h3>
+
+            <div class="inputBox">
+              <span>cards accepted :</span>
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRih-qtU4V1I3cBYT06Pjb4zAsz3TfQjrGpIQ&usqp=CAU"
+                alt=""
+              />
+            </div>
+            <div class="inputBox">
+              <span>Name on card :</span>
+              <input type="text" placeholder="R.V.Pranay Siddhartha Reddy" />
+            </div>
+            <div class="inputBox">
+              <span>Credit card number :</span>
+              <input type="number" placeholder="1111-2222-3333-4444" />
+            </div>
+            <div class="inputBox">
+              <span>Exp month :</span>
+              <input type="text" placeholder="May" />
+            </div>
+
+            <div class="flex">
+              <div class="inputBox">
+                <span>exp year :</span>
+                <input type="number" placeholder="2022" />
+              </div>
+              <div class="inputBox">
+                <span>CVV :</span>
+                <input type="text" placeholder="1234" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <input type="submit" value="Submit" class="submit-btn" />
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
